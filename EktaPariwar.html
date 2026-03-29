@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ekta Pariwar Group | 13 Saal Ka Safar ❤️</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.4/dist/confetti.browser.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap');
+        body { font-family: 'Inter', sans-serif; background: #0a0a0f; color: white; }
+        .hero-font { font-family: 'Playfair Display', serif; }
+        .glass { background: rgba(255,255,255,0.09); backdrop-filter: blur(22px); border: 1px solid rgba(255,255,255,0.18); }
+        .golden-glow { text-shadow: 0 0 40px #facc15; }
+        .member-img { width: 100%; height: 220px; object-fit: cover; border-radius: 16px 16px 0 0; }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+
+<!-- NAVBAR -->
+<nav class="fixed top-0 w-full z-50 glass py-4">
+    <div class="max-w-7xl mx-auto px-5 flex justify-between items-center">
+        <div class="flex items-center gap-3">
+            <img src="logo.png" class="h-10" alt="Logo">
+            <span class="text-2xl font-bold golden-glow">Ekta Pariwar</span>
+        </div>
+        <button onclick="playMusic()" class="flex items-center gap-2 bg-yellow-400 text-black font-semibold px-5 py-3 rounded-2xl text-sm">
+            <i class="fa-solid fa-music"></i> Song
+        </button>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="min-h-screen flex items-center justify-center pt-16 relative">
+    <div class="max-w-6xl mx-auto text-center px-5" data-aos="fade-up">
+        <img src="logo.png" class="mx-auto w-72 mb-8" alt="Logo">
+        <h1 class="hero-font text-5xl md:text-7xl golden-glow mb-6">Ekta Pariwar Group ❤️</h1>
+        <p class="text-4xl md:text-5xl text-yellow-300">13 Saal Ka Pyaar • 13 Saal Ka Safar</p>
+    </div>
+</section>
+
+<!-- FOUNDER + ADMIN -->
+<section class="py-16 bg-black/50" data-aos="fade-up">
+    <div class="max-w-6xl mx-auto px-5 grid grid-cols-1 md:grid-cols-2 gap-10">
+        <div class="text-center cursor-pointer" onclick="showBigPhoto('founder.jpg')">
+            <h2 class="text-3xl mb-6">Our Founder</h2>
+            <img src="founder.jpg" class="w-64 h-64 mx-auto rounded-3xl border-8 border-yellow-400 object-cover">
+            <p class="text-2xl mt-6">Aabid Gouri & Javed Rehman</p>
+        </div>
+        <div class="text-center cursor-pointer" onclick="showBigPhoto('Admin.jpg')">
+            <h2 class="text-3xl mb-6">Head of Admin & Editing</h2>
+            <img src="Admin.jpg" class="w-64 h-64 mx-auto rounded-3xl border-8 border-yellow-400 object-cover">
+            <p class="text-2xl mt-6">Shakil Chouhan</p>
+        </div>
+    </div>
+</section>
+
+<!-- MEMBERS GALLERY -->
+<section class="py-16" data-aos="fade-up">
+    <div class="max-w-7xl mx-auto px-5">
+        <h2 class="text-4xl text-center mb-12">Our 25 Family Members</h2>
+        <div id="membersGrid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6"></div>
+    </div>
+</section>
+
+<!-- GROUP MEMORIES -->
+<section onclick="openMemoriesModal()" class="py-16 bg-black/60 text-center cursor-pointer" data-aos="fade-up">
+    <div class="max-w-7xl mx-auto px-5">
+        <button class="bg-yellow-400 text-black font-semibold px-10 py-4 rounded-2xl text-xl hover:scale-105 transition">
+            Click to View Our Memories ❤️
+        </button>
+    </div>
+</section>
+
+<!-- MEMORIES POPUP -->
+<div id="memoriesModal" class="hidden fixed inset-0 bg-black/95 z-[200] flex items-center justify-center p-4">
+    <div class="max-w-5xl w-full bg-zinc-900 rounded-3xl p-8 relative max-h-[90vh] overflow-auto">
+        <button onclick="closeMemoriesModal()" class="absolute top-6 right-6 text-4xl">✕</button>
+        <h2 class="text-4xl text-center mb-10">Group Memories</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="memoriesContent"></div>
+    </div>
+</div>
+
+<!-- CONTENT CREATOR -->
+<section class="py-16" data-aos="fade-up">
+    <div class="max-w-6xl mx-auto px-5">
+        <h2 class="text-4xl text-center mb-10">✨ Official Content Creator ✨</h2>
+        <div class="glass rounded-3xl p-8 text-center">
+            <h3 class="text-4xl font-bold mb-6">ASLAM GOURI</h3>
+            <div class="flex justify-center gap-8 mb-8 text-xl">
+                <a href="#" class="hover:text-blue-400">Facebook</a>
+                <a href="#" class="hover:text-pink-400">Instagram</a>
+                <a href="https://youtube.com/channel/UC13veXRjLjNzJnq865GX5bw" target="_blank" class="hover:text-red-500">YouTube</a>
+            </div>
+            <div class="grid md:grid-cols-3 gap-6" id="creatorVideos"></div>
+        </div>
+    </div>
+</section>
+
+<!-- IPL RIVALRY -->
+<section class="py-16 bg-gradient-to-r from-pink-900/30 to-blue-900/30" data-aos="fade-up">
+    <div class="max-w-7xl mx-auto px-5">
+        <h2 class="text-4xl text-center mb-8">🏏 IPL RIVALRY 2026 🏏</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="glass rounded-3xl p-8 text-center">
+                <img src="rr-logo.png" class="h-20 mx-auto mb-4">
+                <h3 class="text-3xl font-bold text-pink-400">RAJASTHAN ROYALS</h3>
+                <p class="mt-3 text-lg">Leader: Shakil Chouhan (ilu)</p>
+                <p class="text-base mt-1">Fans: Aasif Gouri (Lighter), Shakil Sahad, Imran Dunga, Aasif Gouri (Sonki)</p>
+            </div>
+            <div class="glass rounded-3xl p-8 text-center">
+                <img src="mi-logo.png" class="h-20 mx-auto mb-4">
+                <h3 class="text-3xl font-bold text-blue-400">MUMBAI INDIANS</h3>
+                <p class="mt-3 text-lg">Leader: Aabid Gouri</p>
+                <p class="text-base mt-1">Fans: Afjal Solanki (Majdur), Javed Gouri (Veer)</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- NAWAB KI KALAM -->
+<section onclick="triggerNawabSection()" class="py-16 bg-black/70 text-center cursor-pointer hover:bg-red-900/30 transition">
+    <p class="text-3xl text-yellow-300">Nawab Ki Gujarish uski Kalam se..✍🏿</p>
+</section>
+
+<!-- THANK YOU -->
+<section class="py-24 text-center">
+    <h2 class="text-5xl leading-tight">13 Saal Tak Saath Rahne Ke Liye<br><span class="golden-glow">Dil Se Shukriya</span> ❤️</h2>
+    <p class="mt-10 text-sm text-gray-400">Website Design By Shakil Chouhan<br>All Rights Reserved © 2026</p>
+</section>
+
+<script>
+    AOS.init({ duration: 1000, once: true });
+
+    let audio = new Audio("welcome-song.mp3");
+    function playMusic() {
+        audio.play();
+    }
+
+    // Clickable Big Photo Function
+    function showBigPhoto(src) {
+        const big = document.createElement('div');
+        big.className = "fixed inset-0 bg-black/95 z-[200] flex items-center justify-center p-4";
+        big.innerHTML = `<img src="${src}" class="max-h-[85vh] max-w-[90vw] rounded-3xl">`;
+        big.onclick = () => big.remove();
+        document.body.appendChild(big);
+    }
+
+    // 25 Members
+    const members = Array.from({length: 25}, (_, i) => ({
+        name: `Member ${i+1}`,
+        photo: `member${i+1}.jpg`
+    }));
+
+    const grid = document.getElementById('membersGrid');
+    members.forEach(m => {
+        const card = document.createElement('div');
+        card.className = "glass rounded-3xl overflow-hidden cursor-pointer";
+        card.innerHTML = `<img src="${m.photo}" class="member-img"><div class="p-4 text-center"><p class="text-lg font-semibold">${m.name}</p></div>`;
+        card.onclick = () => showBigPhoto(m.photo);
+        grid.appendChild(card);
+    });
+
+    // Content Creator
+    document.getElementById('creatorVideos').innerHTML = `
+        <div><video controls poster="AG1-thumb.jpg"><source src="AG1.mp4" type="video/mp4"></video></div>
+        <div><video controls poster="AG2-thumb.jpg"><source src="AG2.mp4" type="video/mp4"></video></div>
+        <div><video controls poster="AG3-thumb.jpg"><source src="AG3.mp4" type="video/mp4"></video></div>
+    `;
+
+    // Group Memories Popup
+    function openMemoriesModal() {
+        const content = `
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <img src="memories1.jpg" class="rounded-2xl">
+                <img src="memories2.jpg" class="rounded-2xl">
+                <img src="memories3.jpg" class="rounded-2xl">
+                <img src="memories4.jpg" class="rounded-2xl">
+                <img src="memories5.jpg" class="rounded-2xl">
+                <img src="memories6.jpg" class="rounded-2xl">
+                <img src="memories7.jpg" class="rounded-2xl">
+                <video controls><source src="memories.mp4" type="video/mp4"></video>
+                <video controls><source src="memories2.mp4" type="video/mp4"></video>
+                <audio controls class="w-full"><source src="memories.mp3" type="audio/mpeg"></audio>
+            </div>
+        `;
+        document.getElementById('memoriesContent').innerHTML = content;
+        document.getElementById('memoriesModal').classList.remove('hidden');
+    }
+
+    function closeMemoriesModal() {
+        document.getElementById('memoriesModal').classList.add('hidden');
+    }
+
+    // Nawab Ki Khuwaish uski Kalam se..✍🏿
+    function triggerNawabSection() {
+        const funny = document.createElement('div');
+        funny.className = "fixed inset-0 bg-black/95 z-[300] flex items-center justify-center p-4";
+        funny.innerHTML = `
+            <div class="max-w-md w-full bg-zinc-900 rounded-3xl p-8 text-center">
+                <img src="Ungli.jpg" class="w-full rounded-2xl mb-8">
+                <p class="text-2xl leading-relaxed">Msg padh liyana ab Nikal Bhai<br>Website dekh naa<br>Shakil Bhai ne kitni mahnat kar ke banai hai<br>mujhe ungli Q kar raha hai... 😆</p>
+                <div class="text-5xl mt-6">🖕</div>
+                <button onclick="this.closest('.fixed').remove()" class="mt-10 bg-yellow-400 text-black px-10 py-4 rounded-2xl font-bold">Samajh gaya bhai 😂</button>
+            </div>
+        `;
+        document.body.appendChild(funny);
+    }
+
+    console.log("%c✅ Final Corrected Version Ready!", "color:#facc15; font-size:20px");
+</script>
+</body>
+</html>
