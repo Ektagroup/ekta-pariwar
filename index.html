@@ -39,7 +39,7 @@
         }
         .hero-font { font-family: 'Playfair Display', serif; }
 
-               .glass-card {
+        .glass-card {
             background: rgba(18, 18, 25, 0.95);
             border: 1px solid rgba(255,255,255,0.08);
             backdrop-filter: blur(12px);
@@ -60,7 +60,6 @@
         .memories-thumb { width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 12px; border: 1px solid rgba(255,255,255,0.08); transition: all 0.2s; }
         .memories-thumb:hover { transform: scale(1.04); border-color: rgba(250, 204, 21, 0.5); }
 
-        /* ==================== VIDEO FIX ==================== */
         .video-card {
             border-radius: 20px;
             overflow: hidden;
@@ -88,7 +87,6 @@
         .modal-bg { background: rgba(0, 0, 0, 0.96); animation: fadeIn 0.3s ease-out; }
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
-        /* ==================== IMPROVED RIVALRY MOBILE ==================== */
         .rivalry-container { display: flex; gap: 8px; position: relative; }
         .vs-badge-floating {
             position: absolute; left: 50%; top: 40%; transform: translate(-50%, -50%);
@@ -119,7 +117,7 @@
 
 <div id="welcomePage" class="fixed inset-0 bg-black z-[999] flex items-center justify-center">
     <div class="text-center px-6">
-        <img src="logo.png" class="mx-auto w-40 md:w-56 mb-8" alt="Ekta Pariwar Logo">
+        <img src="salam.png" class="mx-auto w-40 md:w-56 mb-8" alt="Ekta Pariwar Logo">
         <h1 class="hero-font text-6xl md:text-8xl font-black golden-glow tracking-tighter mb-4">Ekta Pariwar</h1>
         <p class="text-2xl md:text-4xl text-yellow-300 font-medium mb-12">13 Saal Ka Safar ❤️</p>
 
@@ -133,11 +131,32 @@
 </div>
 
 <nav class="fixed top-0 w-full z-50 py-3 px-4 glass-card shadow-2xl" style="border-radius: 0 0 20px 20px; background: rgba(18, 18, 25, 0.95);">
-    <div class="max-w-7xl mx-auto flex justify-between items-center">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-3">
         <div class="flex items-center gap-2">
             <img src="logo.png" class="h-8 md:h-10" alt="Logo">
             <span class="text-xl md:text-2xl font-extrabold golden-glow tracking-tighter">Ekta Pariwar</span>
         </div>
+
+        <div class="flex flex-wrap justify-center items-center gap-4 text-[10px] md:text-xs font-mono text-gray-300">
+            <div class="text-yellow-400 font-bold border-r border-white/10 pr-4">
+                <i class="fa-regular fa-calendar-days mr-1"></i> <span id="currentDayDate"></span>
+            </div>
+            <div class="flex gap-4">
+                <div class="flex flex-col items-center">
+                    <span class="text-[8px] text-gray-500 uppercase">India</span>
+                    <span id="timeIST" class="text-white">00:00:00</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <span class="text-[8px] text-gray-500 uppercase">Saudi</span>
+                    <span id="timeKSA" class="text-white">00:00:00</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <span class="text-[8px] text-gray-500 uppercase">Dubai</span>
+                    <span id="timeGST" class="text-white">00:00:00</span>
+                </div>
+            </div>
+        </div>
+
         <button onclick="playMusic()" class="flex items-center gap-2 bg-yellow-400 text-black font-bold px-4 py-2 rounded-xl text-xs md:text-sm active:scale-95 transition-all shadow-lg">
             <i class="fa-solid fa-music"></i> <span id="musicText">Song</span>
         </button>
@@ -343,8 +362,8 @@
         <div class="text-center mt-10 px-4">
             <p class="text-gray-400 text-xs md:text-lg uppercase tracking-widest">Sawai Mansingh Stadium, Jaipur | 7:30 PM</p>
             <button onclick="window.open('https://www.hotstar.com/in/sports/cricket', '_blank')" class="mt-6 bg-red-600 hover:bg-red-500 text-white font-bold px-8 py-3 rounded-2xl flex items-center gap-2 mx-auto shadow-lg text-sm active:scale-95 transition-all">
-    <i class="fa-solid fa-circle text-red-300 animate-pulse"></i> LIVE MATCH
-</button>
+                <i class="fa-solid fa-circle text-red-300 animate-pulse"></i> LIVE MATCH
+            </button>
         </div>
     </div>
 </section>
@@ -366,36 +385,69 @@
     </div>
 </section>
 
-<section onclick="triggerNawabSection()" class="py-12 bg-black/70 text-center cursor-pointer border-y border-white/5 active:bg-yellow-400/5 transition-colors" data-aos="fade-in">
+<section class="py-12 bg-black/70 text-center cursor-pointer border-y border-white/5 active:bg-yellow-400/5 transition-colors" onclick="triggerNawabSection()" data-aos="fade-in">
     <p class="text-xl md:text-2xl text-yellow-300 font-medium italic tracking-tight">Nawab Ki Gujarish uski Kalam se..✍🏿</p>
 </section>
 
 <section class="py-24 text-center px-4 Bg-darkBg border-t border-white/5" data-aos="fade-up">
     <h2 class="text-4xl md:text-7xl leading-tight font-black tracking-tighter">13 Saal Tak Saath Rahne Ke Liye<br><span class="golden-glow">Dil Se Shukriya</span> ❤️</h2>
-    <p class="mt-12 text-sm text-gray-600 font-medium">Website Design By  | Shakil Chouhan (ilu) | Aal Right Reserved © 2026</p>
-    <p class="mt-12 text-sm text-gray-600 font-medium">TermsPrivacy Security Status Community Docs Contact Manage cookies Do not share my personal information</p>
+    <p class="mt-12 text-sm text-gray-600 font-medium">Website Design By Shakil Chouhan | Professional Enhanced Edition | 2026</p>
 </section>
 
 <script>
     AOS.init({ duration: 1000, once: true, offset: 50, delay: 50 });
 
-    function enterWebsite() {
-        document.getElementById('welcomePage').style.opacity = '0';
-        setTimeout(() => { document.getElementById('welcomePage').style.display = 'none'; }, 600);
-    }
-
     let audio = new Audio("welcome-song.mp3");
     let isPlaying = false;
+
+    function enterWebsite() {
+        document.getElementById('welcomePage').style.opacity = '0';
+        setTimeout(() => {
+            document.getElementById('welcomePage').style.display = 'none';
+        }, 600);
+
+        if (!isPlaying) {
+            audio.play().then(() => {
+                isPlaying = true;
+                document.getElementById('musicText').innerText = "Pause";
+            }).catch(e => console.log("Music play failed", e));
+        }
+    }
+
     function playMusic() {
         const btnText = document.getElementById('musicText');
-        if (isPlaying) { audio.pause(); btnText.innerText = "Song"; isPlaying = false; }
-        else { audio.play(); btnText.innerText = "Pause"; isPlaying = true; }
+        if (isPlaying) {
+            audio.pause();
+            btnText.innerText = "Song";
+            isPlaying = false;
+        }
+        else {
+            audio.play().catch(e => console.log("Audio play failed", e));
+            btnText.innerText = "Pause";
+            isPlaying = true;
+        }
     }
+
+    audio.onended = function() {
+        document.getElementById('musicText').innerText = "Song";
+        isPlaying = false;
+    };
+
+    function updateWorldClocks() {
+        const now = new Date();
+        const options = { weekday: 'long', day: 'numeric', month: 'short' };
+        document.getElementById('currentDayDate').innerText = now.toLocaleDateString('en-IN', options);
+        const timeOptions = { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false };
+        document.getElementById('timeIST').innerText = now.toLocaleTimeString('en-IN', { ...timeOptions, timeZone: 'Asia/Kolkata' });
+        document.getElementById('timeKSA').innerText = now.toLocaleTimeString('en-IN', { ...timeOptions, timeZone: 'Asia/Riyadh' });
+        document.getElementById('timeGST').innerText = now.toLocaleTimeString('en-IN', { ...timeOptions, timeZone: 'Asia/Dubai' });
+    }
+    setInterval(updateWorldClocks, 1000);
+    updateWorldClocks();
 
     function showBigPhoto(src, type = 'img') {
         const big = document.createElement('div');
         big.className = "fixed inset-0 modal-bg z-[1000] flex items-center justify-center p-2 md:p-10 backdrop-blur-md";
-
         if (type === 'img') {
             big.innerHTML = `<div class="relative max-w-full max-h-full">
                 <button class="absolute -top-10 right-0 text-white text-3xl">✕</button>
@@ -416,8 +468,6 @@
         document.body.appendChild(big);
     }
 
-    // ==================== DYNAMIC MEMBERS LIST ====================
-    // Is list mein bas naam change kar do, photo automatic "Naam.jpg" load hogi
    const memberNames = [
         "Aabid Gouri", "Javed Rehman", "Shakil Chouhan", "Aasif Gouri", "Khalid Gouri",
         "Akhtar Hussain","Afjal Solanki", "Asif Gouri", "Aabid Nirban", "Shakil Sahad", "Yash Chouhan",
@@ -428,7 +478,7 @@
 
     const grid = document.getElementById('membersGrid');
     memberNames.forEach((name) => {
-        const photo = `${name}.jpg`; // Image name automatic set
+        const photo = `${name}.jpg`;
         const div = document.createElement('div');
         div.className = "glass-card overflow-hidden shadow-lg hover:scale-105 active:scale-95 cursor-pointer";
         div.innerHTML = `<img src="${photo}" class="member-img" loading="lazy" onerror="this.src='logo.png'"><p class="p-2.5 text-center text-[10px] md:text-xs font-bold uppercase tracking-tighter truncate">${name}</p>`;
@@ -477,12 +527,10 @@
         document.body.appendChild(popup);
     }
 
-    // Molecule Game
     let gameScore = 0;
     let highGameScore = localStorage.getItem('ektaPariwarHighScore') || 0;
     let gameInterval;
     let gameActive = false;
-
     document.getElementById('highScore').innerText = highGameScore;
 
     function startGame() {
@@ -490,7 +538,6 @@
         document.getElementById('score').innerText = gameScore;
         const area = document.getElementById('gameArea');
         area.innerHTML = '<div id="gameMolecule" style="position:absolute; width:60px; height:60px; background:#facc15; border-radius:50%; cursor:pointer; display:flex; align-items:center; justify-content:center; color:black; font-weight:bold; font-size:10px; transition: 0.2s;">FAMILY</div>';
-
         const mol = document.getElementById('gameMolecule');
         mol.onclick = () => {
             if(!gameActive) return;
